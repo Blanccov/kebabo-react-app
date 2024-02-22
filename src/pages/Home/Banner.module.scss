@@ -1,0 +1,47 @@
+.banner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  width: 80%;
+  background-color: #d9292b;
+  padding: 2rem;
+  color: #fff;
+
+  position: absolute;
+  top: 100vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__item {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  &__text span {
+    font-size: 1.2rem;
+  }
+
+  & img {
+    width: 6rem;
+    height: 8rem;
+  }
+}
+@media only screen and (min-width: 600px) {
+    .banner {
+        width: 45rem;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .banner {
+        width: 80%;
+        flex-direction: row;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .banner {
+        padding: 8rem;
+        gap: 8rem;
+        top: 120vh;
+    }
+}

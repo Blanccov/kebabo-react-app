@@ -1,0 +1,221 @@
+.header {
+  background-color: #1c1d1f;
+  background-image: url("../../assets/kebab-bg.png");
+  background-size: cover;
+  background-position: 25%;
+  height: 100vh;
+  position: relative;
+  color: #fff;
+  &__text,
+  &__subtext {
+    text-align: center;
+  }
+  &__text {
+    font-size: 3.4rem;
+    margin-bottom: 3rem;
+  }
+  &__subtext {
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  &__btn {
+    margin: auto;
+  }
+  &__text-area {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 100%;
+  }
+}
+.generator {
+  display: flex;
+  background-color: #161719;
+  color: #a6a9af;
+  &__steak-img {
+    display: none;
+  }
+  &__btn {
+    background-color: #e4dcc7;
+    color: #d9292b;
+    margin: 2rem 0;
+    margin-left: auto;
+  }
+  &__text {
+    align-self: flex-end;
+    // margin-top: 25rem;
+    width: 80%;
+    margin: 25rem auto 4rem auto;
+
+    & span {
+      color: #d9292b;
+      font-size: 1.2rem;
+
+      &::after {
+        content: "";
+        display: block;
+        margin: 1rem 0;
+        background-color: #d9292b;
+        height: 4px;
+        width: 55%; //DO ZMIANY
+      }
+    }
+
+    & h1 {
+      font-size: 2.7rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    &::after {
+      content: "";
+      display: block;
+      margin: 1rem 0;
+      margin-left: auto;
+      background-color: #d9292b;
+      height: 4px;
+      width: 55%; //TU TEŻ
+    }
+  }
+}
+
+.menu {
+  background-color: #1c1d1f;
+  color: #fff;
+  padding-bottom: 4rem;
+  &__text {
+    text-align: center;
+    & span {
+      font-size: 1.4rem;
+      color: #d9292b;
+      visibility: hidden;
+    }
+    & h1 {
+      text-align: center;
+      margin: 2rem;
+      font-size: 3.5rem;
+    }
+  }
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    gap: 0 1rem;
+    width: 100%;
+    margin: 0 auto;
+    place-items: center;
+  }
+
+  &__gallery > *:first-child {
+    & div {
+      background-color: red;
+    }
+  }
+  &__btn {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .header {
+    &__text {
+      font-size: 4rem;
+    }
+    &__subtext {
+      font-size: 2rem;
+    }
+  }
+
+  .generator {
+    &__text {
+      margin: 20rem auto 4rem auto;
+    }
+  }
+
+  .menu {
+    &__gallery {
+      width: fit-content;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 3rem;
+    }
+  }
+}
+@media only screen and (min-width: 900px) {
+  .header {
+    &__text {
+      margin-top: 10rem;
+      font-size: 6rem;
+    }
+    &__subtext {
+      font-size: 2rem;
+    }
+  }
+  .generator {
+    height: 100vh;
+    &__steak-img {
+      display: block;
+      margin: auto 3rem auto auto;
+      width: 30%;
+    }
+    &__text {
+      margin: auto auto auto 3rem;
+      max-width: 45%;
+
+      & span {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .menu {
+    &__gallery {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .header {
+    height: 120vh;
+  }
+
+  .generator {
+    height: 120vh;
+
+    &__text {
+      width: 35%;
+    }
+    & h1 {
+      font-size: 3.2rem;
+    }
+    & h2 {
+      font-size: 1.8rem;
+    }
+  }
+
+  .menu {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    &__gallery {
+      height: min-content;
+      gap: 0 6rem;
+    }
+
+    &__text {
+      & span {
+        visibility: visible;
+      }
+      & h1 {
+        font-size: 6rem;
+        margin: 0;
+      }
+    }
+
+    &__subtext {
+      visibility: visible;
+    }
+  }
+}

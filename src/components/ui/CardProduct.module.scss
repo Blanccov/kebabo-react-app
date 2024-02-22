@@ -1,0 +1,41 @@
+.card {
+    width: fit-content;
+    & img {
+      width: 15rem;
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 14rem;
+        height: 6rem;
+        background-color: #161719;
+        transform: translateY(-50%);
+        padding: .2rem 1rem;
+        color: #fff;
+        & h3 {
+            text-align: end;
+            font-weight: 500;
+        }
+        & h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .card {
+        & img {
+            width: 20rem;
+        }
+        &__text{
+            width: 18rem;
+
+            & h3 {
+                text-align: start;
+            }
+        }
+    }
+  }
+  

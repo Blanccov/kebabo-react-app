@@ -1,0 +1,118 @@
+.navbar {
+  display: grid;
+  background-color: transparent;
+  min-height: 10rem;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto auto;
+  grid-gap: 0.5rem;
+
+  &__item {
+    &--1 {
+      display: none;
+    }
+    &--2 {
+      grid-row: 1;
+      grid-column: 2/3;
+    }
+    &--3 {
+      display: none;
+    }
+    &--4 {
+      display: none;
+    }
+    &--5 {
+      grid-row: 1;
+      grid-column: 3/4;
+    }
+  }
+
+  &__hamburger {
+    margin: auto 4rem auto auto;
+  }
+
+  &__btn {
+    background-color: transparent;
+    border: 0;
+  }
+
+  &__logo {
+    margin: auto;
+
+    & img {
+      width: 15rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+}
+@media only screen and (min-width: 900px) {
+  .navbar {
+    &__item {
+      &--1 {
+        display: flex;
+      }
+      &--2 {
+      }
+      &--3 {
+        display: flex;
+      }
+      &--4 {
+        grid-row: 2;
+        grid-column: 2/3;
+
+        display: flex;
+        justify-content: center;
+        gap: 4rem;
+      }
+      &--5 {
+        display: none;
+      }
+    }
+
+    &__navigation {
+      list-style: none;
+
+      font-size: 1.8rem;
+
+      & a,
+      a:visited,
+      a:link {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+      }
+    }
+    &__social-icons {
+      &--1 {
+        margin: 0 auto;
+        & a {
+          height: min-content;
+        }
+        & img {
+          margin: 1rem 1.5rem;
+          width: 3rem;
+        }
+      }
+      &--2 {
+        margin: 0 auto;
+        & a {
+          height: min-content;
+        }
+        & img {
+          margin: 1rem 1.5rem;
+          width: 3rem;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .navbar {
+    &__logo {
+      & img {
+        width: 22rem;
+      }
+    }
+  }
+}

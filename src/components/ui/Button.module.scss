@@ -1,0 +1,19 @@
+.button {
+  border: none;
+  background: #d9292b;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 1.5rem 2rem;
+
+  display: flex;
+  align-items: center;
+
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  & img {
+    width: 2.5rem;
+  }
+}

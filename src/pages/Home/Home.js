@@ -7,6 +7,7 @@ import Navbar from "../../components/layouts/Navbar";
 
 import SteakPhoto from "../../assets/steak-photo.png";
 import CardProduct from "../../components/ui/CardProduct";
+import Carousel from "../../components/ui/Carousel";
 const Home = () => {
   const cardProducts = ProductsOffer();
   return (
@@ -69,6 +70,9 @@ const Home = () => {
         <Button className={styles.menu__btn} color="white">
           More
         </Button>
+      </section>
+      <section className={styles.carosuel}>
+        <Carousel />
       </section>
     </main>
   );

@@ -1,4 +1,13 @@
 .carousel {
-    &__items {
-    }
+  cursor: grab;
+  overflow: hidden;
+
+  &__inner {
+    display: flex;
+    background-color: orangered;
+  }
+
+  &__item {
+    margin-right: 8rem;
+  }
 }

@@ -1,7 +1,7 @@
 .card {
   background-color: #e4dcc7;
   min-height: 30rem;
-  width: 80%;
+  min-width: 80%;
 
   margin: auto;
 
@@ -51,7 +51,7 @@
 
 @media only screen and (min-width: 600px) {
   .card {
-    width: 40rem;
+    min-width: 40rem;
   }
 
   .profile {
@@ -60,7 +60,7 @@
 }
 @media only screen and (min-width: 900px) {
   .card {
-    width: 60rem;
+    min-width: 60rem;
     height: 40rem;
 
     // grid-template-rows: 20% 60% 20%;
@@ -89,5 +89,4 @@
   }
 }
 @media only screen and (min-width: 1200px) {
-
 }

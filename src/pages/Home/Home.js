@@ -53,7 +53,7 @@ const Home = () => {
         </div>
       </section>
       <section className={`${styles.menu}`}>
-        <div className={styles.menu__text}>
+        <div className={styles.text}>
           <span>Menu</span>
           <h1>Our Products</h1>
         </div>
@@ -71,7 +71,11 @@ const Home = () => {
           More
         </Button>
       </section>
-      <section className={styles.carosuel}>
+      <section className={styles.carousel}>
+        <div className={styles.text}>
+          <span>What is opoinion about us?</span>
+          <h1>Reviews</h1>
+        </div>
         <Carousel />
       </section>
     </main>

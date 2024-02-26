@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { animate, motion, transform } from "framer-motion";
+
 import CarosuelCard from "./CarouselCard";
 import styles from "./Carousel.module.scss";
 import OpinionData from "../../data/OpinionData";
@@ -9,58 +11,50 @@ import RightArrow from "../../assets/right-arrow-icon.svg";
 
 const opinions = OpinionData();
 
+const variants = {
+  animate: { x: "-50%" },
+  transition: { type: "spring", stiffness: 120, damping: 20 },
+};
+const backVariants = {
+  animate: { x: "50%" },
+  transition: { type: "spring", stiffness: 120, damping: 20 },
+};
+
 const Carousel = () => {
   const [prevIndex, setPrevIndex] = useState(opinions.length - 1);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [nextIndex, setNextIndex] = useState(1);
-  const [animate, setAnimate] = useState(null);
+  const [anime, setAnime] = useState(variants);
 
   const next = () => {
-    setAnimate(true);
-    setTimeout(() => {
-      setPrevIndex(currentIndex);
-      setCurrentIndex(nextIndex);
-      setNextIndex((nextIndex + 1) % opinions.length);
-    }, 500);
-
-    setTimeout(() => {
-      setAnimate(null);
-    }, 1000);
+    setPrevIndex(currentIndex);
+    setCurrentIndex(nextIndex);
+    setNextIndex((nextIndex + 1) % opinions.length);
+    setAnime(variants);
   };
 
   const prev = () => {
-    setAnimate(false);
-
     setTimeout(() => {
       setNextIndex(currentIndex);
       setCurrentIndex(prevIndex);
       setPrevIndex((prevIndex - 1 + opinions.length) % opinions.length);
-    }, 500);
-
-    setTimeout(() => {
-      setAnimate(null);
-    }, 1000);
+    }, 100);
+    setAnime(backVariants);
   };
 
   return (
     <div className={styles.carousel}>
-      <div
-        className={`${styles["carousel__inner"]} ${
-          animate === false
-            ? styles["carousel__inner--animate-left"]
-            : animate === true
-            ? styles["carousel__inner--animate-right"]
-            : ""
-        }`}
+      <motion.div
+        animate={anime.animate}
+        transition={anime.transition}
+        className={styles["carousel__inner"]}
+        onAnimationComplete={() => {
+          setAnime({
+            animate: { x: 0 },
+            transition: { duration: 0 },
+          });
+        }}
       >
-        <CarosuelCard
-          key="10"
-          description={opinions[prevIndex].description}
-          name={opinions[prevIndex].name}
-          date={opinions[prevIndex].date}
-          stars={opinions[prevIndex].stars}
-          className={styles["carousel__item"]}
-        />
         <CarosuelCard
           key={opinions[prevIndex].name}
           description={opinions[prevIndex].description}
@@ -85,20 +79,12 @@ const Carousel = () => {
           stars={opinions[nextIndex].stars}
           className={styles["carousel__item"]}
         />
-        <CarosuelCard
-          key="11"
-          description={opinions[nextIndex].description}
-          name={opinions[nextIndex].name}
-          date={opinions[nextIndex].date}
-          stars={opinions[nextIndex].stars}
-          className={styles["carousel__item"]}
-        />
-      </div>
+      </motion.div>
       <div className={styles.carousel__buttons}>
-        <button onClick={prev} disabled={animate !== null}>
-          <img src={LeftArrow} alt="Left Arrow" />
+        <button onClick={prev}>
+          <img src={LeftArrow} />
         </button>
-        <button onClick={next} disabled={animate !== null}>
+        <button onClick={next}>
           <img src={RightArrow} />
         </button>
       </div>

@@ -23,7 +23,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
 
 .footer {
   grid-column: 1/-1;
-  transform: translateY(50%);
+  // transform: translateY(50%);
   background-color: #28272c;
   min-height: 30rem;
   display: grid;

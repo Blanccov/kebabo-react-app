@@ -1,13 +1,148 @@
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes slide-back {
+  0% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes scale {
+  0%,
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
 .carousel {
-  cursor: grab;
   overflow: hidden;
 
   &__inner {
     display: flex;
-    background-color: orangered;
+    justify-content: space-around;
+    &--animate-right {
+      animation: slide 1s ease-out forwards;
+    }
+    &--animate-left {
+      animation: slide-back 1s ease-out forwards;
+    }
   }
 
   &__item {
-    margin-right: 8rem;
+    margin: 4rem 8rem;
+    &--current {
+      transform: scale(1.2);
+      animation: scale 1s ease forwards;
+    }
+  }
+
+  &__buttons {
+    text-align: center;
+
+    & button {
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+      margin: 2rem;
+    }
+  }
+}
+@media only screen and (min-width: 600px) {
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    75% {
+      transform: translateX(-120%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes slide-back {
+    0% {
+      transform: translateX(0);
+    }
+    75% {
+      transform: translateX(120%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  
+  @keyframes scale {
+    0%,
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+}
+@media only screen and (min-width: 900px) {
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    75% {
+      transform: translateX(-110%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes slide-back {
+    0% {
+      transform: translateX(0);
+    }
+    75% {
+      transform: translateX(110%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+}
+@media only screen and (min-width: 1200px) {
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    75% {
+      transform: translateX(-80%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes slide-back {
+    0% {
+      transform: translateX(0);
+    }
+    75% {
+      transform: translateX(80%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
   }
 }

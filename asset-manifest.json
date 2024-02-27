@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/kebabo-react-app/static/css/main.d3a48d45.css",
+    "main.js": "/kebabo-react-app/static/js/main.3f628668.js",
+    "static/js/453.04c10d03.chunk.js": "/kebabo-react-app/static/js/453.04c10d03.chunk.js",
+    "static/media/kebab-bg.png": "/kebabo-react-app/static/media/kebab-bg.534f7245702a28f8fcd5.png",
+    "static/media/steak-photo.png": "/kebabo-react-app/static/media/steak-photo.5b7f145dfa3105dbbfe5.png",
+    "static/media/falafel-icon.svg": "/kebabo-react-app/static/media/falafel-icon.6d27c47dc98bf4ef4ca34172a27c0350.svg",
+    "static/media/sultans-kebab-photo.png": "/kebabo-react-app/static/media/sultans-kebab-photo.a3f01fba94cd675b74ff.png",
+    "static/media/bazaar-kebab-photo.png": "/kebabo-react-app/static/media/bazaar-kebab-photo.38f90eeebf1611a64e45.png",
+    "static/media/ottoman-kebab-photo.png": "/kebabo-react-app/static/media/ottoman-kebab-photo.32f8a08d54650fac388a.png",
+    "static/media/anatolian-kebab-photo.png": "/kebabo-react-app/static/media/anatolian-kebab-photo.f568537590492be9b79c.png",
+    "static/media/logo-icon.svg": "/kebabo-react-app/static/media/logo-icon.3a5ec32ff225e1b7c6aad4ea4b1d59b7.svg",
+    "static/media/sheep-icon.svg": "/kebabo-react-app/static/media/sheep-icon.16c175ef518026979ce3e14d4ad07ef3.svg",
+    "static/media/racco-icon.svg": "/kebabo-react-app/static/media/racco-icon.5872aa1b29b80b69ca7e0d8cb787dc66.svg",
+    "static/media/avatar-icon.svg": "/kebabo-react-app/static/media/avatar-icon.17e235be6c78aa401b54cfdd022b7592.svg",
+    "static/media/meat-bg.png": "/kebabo-react-app/static/media/meat-bg.e077f46e83e2a855d899.png",
+    "static/media/chicken-icon.svg": "/kebabo-react-app/static/media/chicken-icon.84b94e195da85f754c957516efed99da.svg",
+    "index.html": "/kebabo-react-app/index.html",
+    "main.d3a48d45.css.map": "/kebabo-react-app/static/css/main.d3a48d45.css.map",
+    "main.3f628668.js.map": "/kebabo-react-app/static/js/main.3f628668.js.map",
+    "453.04c10d03.chunk.js.map": "/kebabo-react-app/static/js/453.04c10d03.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d3a48d45.css",
+    "static/js/main.3f628668.js"
+  ]
+}

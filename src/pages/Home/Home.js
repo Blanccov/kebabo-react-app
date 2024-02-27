@@ -1,22 +1,24 @@
 import styles from "./Home.module.scss";
 import ProductsOffer from "../../data/ProductsOffer";
 
-import Button from "../../components/ui/Button";
+import Button from "../../components/ui/Button/Button";
 import Banner from "./Banner";
 import Navbar from "../../components/layouts/Navbar";
 
 import SteakPhoto from "../../assets/steak-photo.png";
-import CardProduct from "../../components/ui/CardProduct";
-import Carousel from "../../components/ui/Carousel";
+import CardProduct from "../../components/ui/CardProduct/CardProduct";
+import Carousel from "../../components/ui/Carousel/Carousel";
+
+const cardProducts = ProductsOffer();
 const Home = () => {
-  const cardProducts = ProductsOffer();
+
   return (
     <main className={`${styles.main}`}>
       <header className={`${styles.header}`}>
         <Navbar />
         <div className={`${styles["header__text-area"]}`}>
           <h1 className={`${styles.header__text}`}>
-            What womans?!
+            What you need?!
             <br />
             Kebabo!!!
           </h1>

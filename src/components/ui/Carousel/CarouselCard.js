@@ -1,8 +1,8 @@
 import styles from "./CarouselCard.module.scss";
 import Stars from "./Stars";
 
-import AvatarIcon from "../../assets/avatar-icon.svg";
-import MeatPhoto from "../../assets/meat-bg.png";
+import AvatarIcon from "../../../assets/avatar-icon.svg";
+import MeatPhoto from "../../../assets/meat-bg.png";
 
 const CarosuelCard = (props) => {
   return (

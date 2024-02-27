@@ -1,13 +1,15 @@
 import React from "react";
 import styles from "./Footer.module.scss";
 
-import SendIcon from "../../assets/send-icon.svg";
-import PhoneIcon from "../../assets/phone-icon.svg";
-import PinIcon from "../../assets/pin-icon.svg";
-import TwitterIcon from "../../assets/twitter-icon.svg";
-import InstagramIcon from "../../assets/instagram-icon.svg";
-import TikTokIcon from "../../assets/tiktok-icon.svg";
 import RaccoIcon from "../../assets/racco-icon.svg";
+import {
+  TikTokIcon,
+  InstagramIcon,
+  TwitterIcon,
+  SendIcon,
+  PhoneIcon,
+  PinIcon,
+} from "../ui/Icons";
 
 const Footer = () => {
   return (
@@ -15,24 +17,24 @@ const Footer = () => {
       <div className={`${styles.footer__item} ${styles["footer__item--1"]}`}>
         <div className={styles["footer__square"]}>
           <div className={styles["footer__square--1"]}>
-            <img src={PhoneIcon} alt="" />
+            <PhoneIcon />
             Call Us <br />
             987-421-383
           </div>
           <div className={styles["footer__square--2"]}>
-            <img src={PinIcon} alt="" />  
+            <PinIcon />
             Address <br />
             Rejtana 48, Rzeszów
           </div>
           <div className={styles["footer__square--3"]}>
             <a href="test">
-              <img src={TwitterIcon} alt="" />
+              <TwitterIcon />
             </a>
             <a href="test">
-              <img src={InstagramIcon} alt="" />
+              <InstagramIcon />
             </a>
             <a href="test">
-              <img src={TikTokIcon} alt="" />
+              <TikTokIcon />
             </a>
           </div>
         </div>
@@ -51,7 +53,7 @@ const Footer = () => {
             placeholder="E-mail"
           />
           <button className={styles["btn"]}>
-            <img src={SendIcon} alt="" />
+            <SendIcon />
           </button>
         </div>
       </div>

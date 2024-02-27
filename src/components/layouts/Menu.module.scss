@@ -1,0 +1,81 @@
+// @keyframes slideDownBackdrop {
+//   0% {
+//     top: -100%;
+//   }
+//   100% {
+//     top: 0;
+//   }
+// }
+
+// @keyframes opacity {
+//     0% {
+//         opacity: 0;
+//     }
+//     100% {
+//         opacity: 1;
+//     }
+// }
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.75);
+  touch-action: pan-x;
+  //   animation: slideDownBackdrop 0.5s ;
+}
+
+.modal {
+  position: absolute;
+  top: 5dvh;
+  left: 10%;
+  width: 80%;
+  z-index: 100;
+  overflow: hidden;
+  height: 90dvh;
+
+  color: #fff;
+  font-size: 1.6rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  touch-action: pan-x;
+
+  //   animation: opacity 1s ease-in-out forwards;
+
+  a,
+  a:visited,
+  a:link {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &__name::after {
+    display: block;
+    content: "";
+    height: 4px;
+    width: 100%;
+    background-color: red;
+  }
+  &__item:nth-child(5)::after,
+  &__item:nth-child(8)::after {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 300%);
+    display: block;
+    content: "";
+    height: 4px;
+    border-radius: 5px;
+    width: 10%;
+    background-color: red;
+  }
+}

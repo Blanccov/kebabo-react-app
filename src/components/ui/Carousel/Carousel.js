@@ -1,9 +1,9 @@
 import { useReducer, useState } from "react";
 import CarosuelCard from "./CarouselCard";
 import styles from "./Carousel.module.scss";
-import OpinionData from "../../data/OpinionData";
-import LeftArrow from "../../assets/left-arrow-icon.svg";
-import RightArrow from "../../assets/right-arrow-icon.svg";
+import OpinionData from "../../../data/OpinionData";
+
+import { LeftArrow, RightArrow } from "../Icons";
 
 const opinions = OpinionData();
 
@@ -123,10 +123,10 @@ const Carousel = () => {
       </div>
       <div className={styles.carousel__buttons}>
         <button onClick={prev} disabled={animate !== null}>
-          <img src={LeftArrow} alt="Left Arrow" />
+          <LeftArrow />
         </button>
         <button onClick={next} disabled={animate !== null}>
-          <img src={RightArrow} />
+          <RightArrow />
         </button>
       </div>
     </div>

@@ -1,3 +1,10 @@
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  transform-origin: top;
+}
 .navbar {
   display: grid;
   background-color: transparent;
@@ -28,6 +35,7 @@
 
   &__hamburger {
     margin: auto 4rem auto auto;
+    z-index: 100;
   }
 
   &__btn {
@@ -89,7 +97,7 @@
         & a {
           height: min-content;
         }
-        & img {
+        & svg {
           margin: 1rem 1.5rem;
           width: 3rem;
         }
@@ -99,7 +107,7 @@
         & a {
           height: min-content;
         }
-        & img {
+        & svg {
           margin: 1rem 1.5rem;
           width: 3rem;
         }

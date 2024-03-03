@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/kebabo-react-app/static/css/main.f1c7d95f.css",
-    "main.js": "/kebabo-react-app/static/js/main.5d51bd73.js",
+    "main.css": "/kebabo-react-app/static/css/main.25a2f0db.css",
+    "main.js": "/kebabo-react-app/static/js/main.f9280eec.js",
     "static/js/453.04c10d03.chunk.js": "/kebabo-react-app/static/js/453.04c10d03.chunk.js",
     "static/media/kebab-bg.png": "/kebabo-react-app/static/media/kebab-bg.534f7245702a28f8fcd5.png",
     "static/media/kebab-half-bg.png": "/kebabo-react-app/static/media/kebab-half-bg.8905fcc8be762a959a9d.png",
@@ -18,12 +18,12 @@
     "static/media/meat-bg.png": "/kebabo-react-app/static/media/meat-bg.e077f46e83e2a855d899.png",
     "static/media/chicken-icon.svg": "/kebabo-react-app/static/media/chicken-icon.84b94e195da85f754c957516efed99da.svg",
     "index.html": "/kebabo-react-app/index.html",
-    "main.f1c7d95f.css.map": "/kebabo-react-app/static/css/main.f1c7d95f.css.map",
-    "main.5d51bd73.js.map": "/kebabo-react-app/static/js/main.5d51bd73.js.map",
+    "main.25a2f0db.css.map": "/kebabo-react-app/static/css/main.25a2f0db.css.map",
+    "main.f9280eec.js.map": "/kebabo-react-app/static/js/main.f9280eec.js.map",
     "453.04c10d03.chunk.js.map": "/kebabo-react-app/static/js/453.04c10d03.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f1c7d95f.css",
-    "static/js/main.5d51bd73.js"
+    "static/css/main.25a2f0db.css",
+    "static/js/main.f9280eec.js"
   ]
 }

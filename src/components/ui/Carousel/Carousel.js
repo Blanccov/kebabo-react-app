@@ -6,7 +6,7 @@ import OpinionData from "../../../data/OpinionData";
 import { LeftArrow, RightArrow } from "../Icons";
 
 const Carousel = () => {
-  const opinions = OpinionData(); // Call OpinionData here
+  const opinions = OpinionData();
   const initialState = {
     prevPrevIndex: opinions ? opinions.length - 2 : 0,
     prevIndex: opinions ? opinions.length - 1 : 0,
@@ -22,12 +22,16 @@ const Carousel = () => {
         prevIndex: state.currentIndex,
         currentIndex: state.nextIndex,
         nextIndex: state.nextNextIndex,
-        nextNextIndex: (state.nextNextIndex + 1) % (opinions ? opinions.length : 1),
+        nextNextIndex:
+          (state.nextNextIndex + 1) % (opinions ? opinions.length : 1),
       }),
       PREV: () => ({
         prevPrevIndex:
-          (state.prevPrevIndex - 1 + (opinions ? opinions.length : 1)) % (opinions ? opinions.length : 1),
-        prevIndex: (state.prevIndex - 1 + (opinions ? opinions.length : 1)) % (opinions ? opinions.length : 1),
+          (state.prevPrevIndex - 1 + (opinions ? opinions.length : 1)) %
+          (opinions ? opinions.length : 1),
+        prevIndex:
+          (state.prevIndex - 1 + (opinions ? opinions.length : 1)) %
+          (opinions ? opinions.length : 1),
         currentIndex: state.prevIndex,
         nextIndex: state.currentIndex,
         nextNextIndex: state.nextIndex,
@@ -81,7 +85,7 @@ const Carousel = () => {
           }`}
         >
           <CarosuelCard
-            key={opinions[state.prevPrevIndex].name}
+            key={1}
             description={opinions[state.prevPrevIndex].description}
             name={opinions[state.prevPrevIndex].name}
             date={opinions[state.prevPrevIndex].date}
@@ -89,7 +93,7 @@ const Carousel = () => {
             className={styles["carousel__item"]}
           />
           <CarosuelCard
-            key={opinions[state.prevIndex].name}
+            key={2}
             description={opinions[state.prevIndex].description}
             name={opinions[state.prevIndex].name}
             date={opinions[state.prevIndex].date}
@@ -97,7 +101,7 @@ const Carousel = () => {
             className={styles["carousel__item"]}
           />
           <CarosuelCard
-            key={opinions[state.currentIndex].name}
+            key={3}
             description={opinions[state.currentIndex].description}
             name={opinions[state.currentIndex].name}
             date={opinions[state.currentIndex].date}
@@ -105,7 +109,7 @@ const Carousel = () => {
             className={`${styles["carousel__item"]} ${styles["carousel__item--current"]}`}
           />
           <CarosuelCard
-            key={opinions[state.nextIndex].name}
+            key={4}
             description={opinions[state.nextIndex].description}
             name={opinions[state.nextIndex].name}
             date={opinions[state.nextIndex].date}
@@ -113,7 +117,7 @@ const Carousel = () => {
             className={styles["carousel__item"]}
           />
           <CarosuelCard
-            key={opinions[state.nextNextIndex].name}
+            key={5}
             description={opinions[state.nextNextIndex].description}
             name={opinions[state.nextNextIndex].name}
             date={opinions[state.nextNextIndex].date}

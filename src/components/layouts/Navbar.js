@@ -53,13 +53,13 @@ const Navbar = () => {
         <div
           className={`${styles["navbar__social-icons--1"]} ${styles["navbar__item--1"]}`}
         >
-          <a href="test">
+          <a href="#">
             <TikTokIcon />
           </a>
-          <a href="test">
+          <a href="#">
             <TwitterIcon />
           </a>
-          <a href="test">
+          <a href="#">
             <InstagramIcon />
           </a>
         </div>
@@ -71,13 +71,13 @@ const Navbar = () => {
         <div
           className={`${styles["navbar__social-icons--2"]} ${styles["navbar__item--3"]}`}
         >
-          <a href="test">
+          <a href="#">
             <ProfileIcon />
           </a>
-          <a href="test">
+          <a href="#">
             <LoupeIcon />
           </a>
-          <a href="test">
+          <a href="#">
             <CartIcon />
           </a>
         </div>
@@ -85,20 +85,22 @@ const Navbar = () => {
           className={`${styles["navbar__navigation"]} ${styles["navbar__item--4"]}`}
         >
           <li>
-            <a href="test">Home</a>
+            <a href="#">Home</a>
           </li>
           <li>
-            <a href="test">Menu</a>
+            <a href="#">Menu</a>
           </li>
           <li>
-            <a href="test">Kebab Generator</a>
+            <a href="#">Kebab Generator</a>
           </li>
           <li>
-            <a href="test">Contact</a>
+            <a href="#">Contact</a>
           </li>
         </ul>
         <div
-          className={`${styles["navbar__item--5"]} ${styles["navbar__hamburger"]}`}
+          className={`${styles["navbar__item--5"]} ${
+            styles["navbar__hamburger"]
+          } ${menu === true ? styles["navbar__hamburger--fixed"] : ""}`}
         >
           <button className={`${styles["navbar__btn"]}`} onClick={menuToggle}>
             <HamburgerIcon />

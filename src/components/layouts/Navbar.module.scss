@@ -34,8 +34,14 @@
   }
 
   &__hamburger {
-    margin: auto 4rem auto auto;
+    margin-top: 2.5rem;
     z-index: 100;
+    position: absolute;
+    left: 85%;
+    
+    &--fixed {
+      position: fixed;
+    }
   }
 
   &__btn {

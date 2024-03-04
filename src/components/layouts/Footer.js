@@ -27,13 +27,13 @@ const Footer = () => {
             Rejtana 48, Rzeszów
           </div>
           <div className={styles["footer__square--3"]}>
-            <a href="test">
+            <a href="#">
               <TwitterIcon />
             </a>
-            <a href="test">
+            <a href="#">
               <InstagramIcon />
             </a>
-            <a href="test">
+            <a href="#">
               <TikTokIcon />
             </a>
           </div>

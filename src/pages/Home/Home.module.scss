@@ -20,14 +20,13 @@
     font-weight: 500;
   }
   &__btn {
-    margin: auto;
+    margin: 0 auto;
   }
   &__text-area {
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
     width: 100%;
   }
 }
@@ -39,8 +38,8 @@
     display: none;
   }
   &__btn {
-    background-color: #e4dcc7;
-    color: #d9292b;
+    color: #d9292b !important;
+    background-color: #e4dcc7 !important;
     margin: 2rem 0;
     margin-left: auto;
   }
@@ -161,6 +160,9 @@
     &__subtext {
       font-size: 2rem;
     }
+    &__text-area {
+      top: 45%;
+    }
   }
   .generator {
     height: 100vh;
@@ -185,8 +187,6 @@
       grid-template-columns: repeat(4, 1fr);
     }
   }
-
-
 }
 @media only screen and (min-width: 1200px) {
   .header {

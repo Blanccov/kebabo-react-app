@@ -17,35 +17,35 @@
 // }
 
 .backdrop {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   z-index: 10;
   background: rgba(0, 0, 0, 0.75);
-  touch-action: pan-x;
+  // touch-action: pan-x;
   //   animation: slideDownBackdrop 0.5s ;
 }
 
 .modal {
-  position: absolute;
-  top: 5dvh;
+  position: fixed;
+  top: 5svh;
   left: 10%;
   width: 80%;
   z-index: 100;
-  overflow: hidden;
-  height: 90dvh;
+  // overflow: hidden;
+  height: 90svh;
 
   color: #fff;
   font-size: 1.6rem;
 
   display: flex;
+  gap: 1.5rem;
   flex-direction: column;
   justify-content: space-around;
 
-  touch-action: pan-x;
-
+  // touch-action: pan-x;
   //   animation: opacity 1s ease-in-out forwards;
 
   a,

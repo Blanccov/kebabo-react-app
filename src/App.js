@@ -1,17 +1,19 @@
 import React from "react";
 import "./App.scss";
 import Footer from "./components/layouts/Footer";
-import Navbar from "./components/layouts/Navbar";
-import Button from "./components/ui/Button/Button";
-import Home from "./pages/Home/Home";
+import { Outlet } from "react-router-dom";
+
+import __test__ from "./components/ui/__test__";
 
 function App() {
+
+  const test = __test__();
+
   return (
-    <React.Fragment>
-      {/* <Navbar /> */}
-      <Home />
+    <>
+      <Outlet />
       <Footer />
-    </React.Fragment>
+    </>
   );
 }
 

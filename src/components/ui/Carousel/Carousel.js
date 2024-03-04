@@ -5,44 +5,43 @@ import OpinionData from "../../../data/OpinionData";
 
 import { LeftArrow, RightArrow } from "../Icons";
 
-const opinions = OpinionData();
-
-const initialState = {
-  prevPrevIndex: opinions.length - 2,
-  prevIndex: opinions.length - 1,
-  currentIndex: 0,
-  nextIndex: 1,
-  nextNextIndex: 2,
-};
-
-const reducer = (state, action) => {
-  const actionHandlers = {
-    NEXT: () => ({
-      prevPrevIndex: state.prevIndex,
-      prevIndex: state.currentIndex,
-      currentIndex: state.nextIndex,
-      nextIndex: state.nextNextIndex,
-      nextNextIndex: (state.nextNextIndex + 1) % opinions.length,
-    }),
-    PREV: () => ({
-      prevPrevIndex:
-        (state.prevPrevIndex - 1 + opinions.length) % opinions.length,
-      prevIndex: (state.prevIndex - 1 + opinions.length) % opinions.length,
-      currentIndex: state.prevIndex,
-      nextIndex: state.currentIndex,
-      nextNextIndex: state.nextIndex,
-    }),
+const Carousel = () => {
+  const opinions = OpinionData(); // Call OpinionData here
+  const initialState = {
+    prevPrevIndex: opinions ? opinions.length - 2 : 0,
+    prevIndex: opinions ? opinions.length - 1 : 0,
+    currentIndex: 0,
+    nextIndex: 1,
+    nextNextIndex: 2,
   };
 
-  const actionHandler = actionHandlers[action.type];
-  if (!actionHandler) {
-    throw new Error("Unsupported action type");
-  }
+  const reducer = (state, action) => {
+    const actionHandlers = {
+      NEXT: () => ({
+        prevPrevIndex: state.prevIndex,
+        prevIndex: state.currentIndex,
+        currentIndex: state.nextIndex,
+        nextIndex: state.nextNextIndex,
+        nextNextIndex: (state.nextNextIndex + 1) % (opinions ? opinions.length : 1),
+      }),
+      PREV: () => ({
+        prevPrevIndex:
+          (state.prevPrevIndex - 1 + (opinions ? opinions.length : 1)) % (opinions ? opinions.length : 1),
+        prevIndex: (state.prevIndex - 1 + (opinions ? opinions.length : 1)) % (opinions ? opinions.length : 1),
+        currentIndex: state.prevIndex,
+        nextIndex: state.currentIndex,
+        nextNextIndex: state.nextIndex,
+      }),
+    };
 
-  return actionHandler();
-};
+    const actionHandler = actionHandlers[action.type];
+    if (!actionHandler) {
+      throw new Error("Unsupported action type");
+    }
 
-const Carousel = () => {
+    return actionHandler();
+  };
+
   const [state, dispatch] = useReducer(reducer, initialState);
   const [animate, setAnimate] = useState(null);
 
@@ -71,56 +70,59 @@ const Carousel = () => {
 
   return (
     <div className={styles.carousel}>
-      <div
-        className={`${styles["carousel__inner"]} ${
-          animate === false
-            ? styles["carousel__inner--animate-left"]
-            : animate === true
-            ? styles["carousel__inner--animate-right"]
-            : ""
-        }`}
-      >
-        <CarosuelCard
-          key={opinions[state.prevPrevIndex].name}
-          description={opinions[state.prevPrevIndex].description}
-          name={opinions[state.prevPrevIndex].name}
-          date={opinions[state.prevPrevIndex].date}
-          stars={opinions[state.prevPrevIndex].stars}
-          className={styles["carousel__item"]}
-        />
-        <CarosuelCard
-          key={opinions[state.prevIndex].name}
-          description={opinions[state.prevIndex].description}
-          name={opinions[state.prevIndex].name}
-          date={opinions[state.prevIndex].date}
-          stars={opinions[state.prevIndex].stars}
-          className={styles["carousel__item"]}
-        />
-        <CarosuelCard
-          key={opinions[state.currentIndex].name}
-          description={opinions[state.currentIndex].description}
-          name={opinions[state.currentIndex].name}
-          date={opinions[state.currentIndex].date}
-          stars={opinions[state.currentIndex].stars}
-          className={`${styles["carousel__item"]} ${styles["carousel__item--current"]}`}
-        />
-        <CarosuelCard
-          key={opinions[state.nextIndex].name}
-          description={opinions[state.nextIndex].description}
-          name={opinions[state.nextIndex].name}
-          date={opinions[state.nextIndex].date}
-          stars={opinions[state.nextIndex].stars}
-          className={styles["carousel__item"]}
-        />
-        <CarosuelCard
-          key={opinions[state.nextNextIndex].name}
-          description={opinions[state.nextNextIndex].description}
-          name={opinions[state.nextNextIndex].name}
-          date={opinions[state.nextNextIndex].date}
-          stars={opinions[state.nextNextIndex].stars}
-          className={styles["carousel__item"]}
-        />
-      </div>
+      {opinions && (
+        <div
+          className={`${styles["carousel__inner"]} ${
+            animate === false
+              ? styles["carousel__inner--animate-left"]
+              : animate === true
+              ? styles["carousel__inner--animate-right"]
+              : ""
+          }`}
+        >
+          <CarosuelCard
+            key={opinions[state.prevPrevIndex].name}
+            description={opinions[state.prevPrevIndex].description}
+            name={opinions[state.prevPrevIndex].name}
+            date={opinions[state.prevPrevIndex].date}
+            stars={opinions[state.prevPrevIndex].stars}
+            className={styles["carousel__item"]}
+          />
+          <CarosuelCard
+            key={opinions[state.prevIndex].name}
+            description={opinions[state.prevIndex].description}
+            name={opinions[state.prevIndex].name}
+            date={opinions[state.prevIndex].date}
+            stars={opinions[state.prevIndex].stars}
+            className={styles["carousel__item"]}
+          />
+          <CarosuelCard
+            key={opinions[state.currentIndex].name}
+            description={opinions[state.currentIndex].description}
+            name={opinions[state.currentIndex].name}
+            date={opinions[state.currentIndex].date}
+            stars={opinions[state.currentIndex].stars}
+            className={`${styles["carousel__item"]} ${styles["carousel__item--current"]}`}
+          />
+          <CarosuelCard
+            key={opinions[state.nextIndex].name}
+            description={opinions[state.nextIndex].description}
+            name={opinions[state.nextIndex].name}
+            date={opinions[state.nextIndex].date}
+            stars={opinions[state.nextIndex].stars}
+            className={styles["carousel__item"]}
+          />
+          <CarosuelCard
+            key={opinions[state.nextNextIndex].name}
+            description={opinions[state.nextNextIndex].description}
+            name={opinions[state.nextNextIndex].name}
+            date={opinions[state.nextNextIndex].date}
+            stars={opinions[state.nextNextIndex].stars}
+            className={styles["carousel__item"]}
+          />
+        </div>
+      )}
+
       <div className={styles.carousel__buttons}>
         <button onClick={prev} disabled={animate !== null}>
           <LeftArrow />

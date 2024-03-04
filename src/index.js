@@ -1,13 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import {
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import Home from "./pages/Home/Home";
+import NoMatch from "./pages/NoMatch/NoMatch";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter([
+  {
+    path: "/kebabo-react-app/",
+    element: <App />,
+    children: [
+      {
+        path: "/kebabo-react-app/",
+        element: <Home />,
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <NoMatch />,
+  },
+]);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
